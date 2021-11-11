@@ -6,5 +6,6 @@
 
   <p>
     <%= link_to "Show this message", message %>
+    <%= button_to "Destroy this message", message_path(message), method: :delete %>
   </p>
 </div>
