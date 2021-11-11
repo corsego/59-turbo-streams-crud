@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Message</h1>
+<h1>Messages</h1>
+
+<div id="new_message">
+  <%= render partial: "messages/form", locals: { message: Message.new } %>
+</div>
 
 <div id="messages">
   <%= render @messages %>
