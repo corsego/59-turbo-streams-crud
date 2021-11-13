@@ -5,6 +5,6 @@
 
   <div style='display: flex; justify-content: flex-end; align-items: center; gap: 10px;}'>
     <%= link_to "Edit message", edit_message_path(message) %>
-    <%= button_to "Destroy message", message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= button_to "Destroy message", message_path(message), method: :delete %>
   </div>
 <% end %>
