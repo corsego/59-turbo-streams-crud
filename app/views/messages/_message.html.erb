@@ -1,12 +1,10 @@
-<div id="<%= dom_id message %>" class="scaffold_record">
+<%= turbo_frame_tag dom_id(message) do %>
   <p>
-    <strong>Body:</strong>
-    <%= message.body %>
+    <strong><%= message.body %></strong>
   </p>
 
-  <p>
-    <%= link_to "Show this message", message %>
-    <%= button_to "Edit this message", edit_message_path(message), method: :post %>
-    <%= button_to "Destroy this message", message_path(message), method: :delete %>
-  </p>
-</div>
+  <div style='display: flex; justify-content: flex-end; align-items: center; gap: 10px;}'>
+    <%= link_to "Edit message", edit_message_path(message) %>
+    <%= button_to "Destroy message", message_path(message), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>

@@ -45,6 +45,9 @@ gem "bootsnap", ">= 1.4.4", require: false
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]
   gem "debug", ">= 1.0.0", platforms: %i[ mri mingw x64_mingw ]
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry', '~> 0.13.1'
+  gem 'pry-byebug'
 end
 
 group :development do
