@@ -5,20 +5,25 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* git clone git@github.com:secretpray/59-turbo-streams-crud.git
 
-* System dependencies
+* cd 59-turbo-streams-crud
 
-* Configuration
+* git checkout turbo_frame
 
-* Database creation
+* bundle
 
-* Database initialization
+* yarn install --check-files
 
-* How to run the test suite
+* ./bin/rails db:setup
 
-* Services (job queues, cache servers, search engines, etc.)
+* ./bin/rails s
 
-* Deployment instructions
+----------------------------------------------------------
 
-* ...
+<details>
+  <summary>Video Preview</summary>
+  
+  https://user-images.githubusercontent.com/17977331/151534484-0b04ca49-d7be-419e-a2d0-1ed6cddcbc3a.mov
+
+</details>
