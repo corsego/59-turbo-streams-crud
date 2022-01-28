@@ -13,3 +13,152 @@
  *= require_tree .
  *= require_self
  */
+
+.edit-btn {
+  border: 2px solid rgb(255, 179, 0);
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.edit-btn:hover {
+  background-color: rgb(255, 179, 0);
+  color: rgb(33, 33, 33);
+}
+
+.time-section {
+  margin: 1rem 0;
+  color: chocolate;
+  opacity: .5;
+  font-size: 16px;
+}
+
+.flash-overlay {
+  position: fixed;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  z-index: 30;
+}
+
+.flash-section {
+  position: relative;
+  border-left-width: 8px;
+  border-color: rgb(245, 158, 11);
+  color: rgb(75, 85, 99);
+  max-width: 24rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+              rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+              rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+}
+
+.flash-section-one {
+  padding: 0.5rem;
+}
+
+.flash-section-two {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flash-section-three {
+  flex: 1 1 0%;
+  margin-left: 0.75rem;
+  width: 0px;
+  padding-top: 0.125rem;
+
+}
+
+.flash-section-four {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.flash-button-section {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.close-flash {
+  display: inline-flex;
+  color: rgb(75, 85, 99);
+  background-color: transparent;
+}
+
+.close-flash:focus {
+  color: rgb(209, 213, 219)
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.svg-close {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+
+.translate-x-full {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.-translate-x-full {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.translate-x-0 {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+.opacity-0 {
+  opacity: 0;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
+.bg-lemonchiffon {
+  background-color: lemonchiffon;
+}

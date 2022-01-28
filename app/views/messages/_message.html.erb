@@ -1,10 +1,24 @@
 <%= turbo_frame_tag dom_id(message) do %>
-  <p>
-    <strong><%= message.body %></strong>
-  </p>
+
+  <blockquote>
+    <div>
+      <strong><%= message.body %></strong>
+    </div>
+  </blockquote>
 
   <div style='display: flex; justify-content: flex-end; align-items: center; gap: 10px;}'>
-    <%= link_to "Edit message", edit_message_path(message) %>
-    <%= button_to "Destroy message", message_path(message), method: :delete %>
+    <% if action_name != "show" %>
+      <%= link_to "Show", message, class: "btn-show-page",
+                        data: { turbo_frame: :messages },
+                        style: 'text-decoration: none;' %>
+    <% else %>
+      <%= link_to 'Back', messages_path, data: { turbo_frame: :messages} %>
+    <% end %>
+    <%= link_to "Edit", edit_message_path(message), class: 'edit-btn' %>
+
+    <%= button_to "Destroy", message_path(message), method: :delete,
+                        form: { data: { turbo_confirm: 'Are you sure?' }},
+                        class: 'btn-close btn-close-white mt-2',
+                        data: { turbo_frame: :messages }%>
   </div>
 <% end %>

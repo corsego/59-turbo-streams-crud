@@ -91,6 +91,8 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -242,6 +244,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   debug (>= 1.0.0)
+  faker (~> 2.19)
   importmap-rails (>= 0.3.4)
   jbuilder (~> 2.7)
   pg (~> 1.1)

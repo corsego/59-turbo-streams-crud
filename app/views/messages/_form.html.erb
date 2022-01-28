@@ -1,22 +1,12 @@
-<%= form_with(model: message, id: dom_id(message)) do |form| %>
-  <% if message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
-      <ul>
-        <% message.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with model: message, id: dom_id(message), target: :_top do |form| %>
+  <%= render 'shared/errors', message: message %>
 
   <div class="field">
-    <%= form.text_area :body, placeholder: 'Body', style: 'width: 100%' %>
+    <%= form.text_area :body, placeholder: 'Body', rows: '5', style: 'width: 100%; resize: vertical;' %>
   </div>
 
   <div style='display: flex; justify-content: flex-end; align-items: center; gap: 10px;}'>
-    <%= form.submit style: 'width: 22%' %>
-    <%= link_to "Cancel", message %>
+    <%= form.submit set_title(message), style: 'max-width: 12%' %>
+    <%= link_to "Cancel", messages_path if !message.new_record? || message.errors.any? %>
   </div>
 <% end %>

@@ -1,0 +1,12 @@
+<% if message.errors.any? %>
+  <div id="error_explanation" data-controller='autohide'>
+    <h4 style='color: rgb(210, 105, 30);'>
+      <%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:
+    </h4>
+    <ul>
+      <% message.errors.each do |error| %>
+        <li style='color: rgb(210, 105, 30);'><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

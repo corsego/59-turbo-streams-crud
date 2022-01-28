@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+return unless Rails.env == 'development'
+
+system 'clear'
+
+puts 'Destroy all records'
+puts '*' * 80
+
+Message.destroy_all
+
+puts 'Create new records'
+puts '*' * 80
+
+MAX_MESSAGES_COUNT = 20
+
+#create Posts
+MAX_MESSAGES_COUNT.times do
+  Message.create( body: Faker::Restaurant.review )
+ print '.'
+end
+
+puts ' '
+puts ' '
+puts "That's all folks!"
+puts '*' * 80
+p "Created #{Message.count} #{'message'.pluralize(Message.count)}"

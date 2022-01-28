@@ -1,11 +1,13 @@
-<%= turbo_frame_tag dom_id(@message) do %>
-  <p id="notice">
-    <%= notice %>
-  </p>
+<%= turbo_stream_from :messages %>
 
-  <%= render 'form', message: @message %>
-  <h1>Messages:
-  <span id="message_counter"> <%= Message.count %> </span>
-  </h1>
-  <%= render @messages rescue Message.all%>
+<span class='time-section'>
+  <%= Time.zone.now.strftime("%A, %D: %k:%M:%S.%L") %>
+</span>
+
+<%= turbo_frame_tag :messages, style: 'margin-top: 1rem;' do %>
+  <div id='new_message'>
+    <%= render 'messages/form', message: Message.new %>
+  </div>
+  <%= render 'messages/count_messages' %>
+  <%= render @messages %>
 <% end %>
