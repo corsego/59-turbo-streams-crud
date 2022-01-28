@@ -1,24 +1,24 @@
-# README
+### Setup:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* git clone git@github.com:secretpray/59-turbo-streams-crud.git
 
-Things you may want to cover:
+* cd 59-turbo-streams-crud
 
-* Ruby version
+* git checkout turbo_frame
 
-* System dependencies
+* bundle
 
-* Configuration
+* yarn install --check-files
 
-* Database creation
+* ./bin/rails db:setup
 
-* Database initialization
+* ./bin/rails s
 
-* How to run the test suite
+----------------------------------------------------------
 
-* Services (job queues, cache servers, search engines, etc.)
+<details>
+  <summary>Video Preview</summary>
+  
+  https://user-images.githubusercontent.com/17977331/151534484-0b04ca49-d7be-419e-a2d0-1ed6cddcbc3a.mov
 
-* Deployment instructions
-
-* ...
+</details>
