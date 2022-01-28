@@ -1,0 +1,3 @@
+<% if @message.errors.any? %>
+ <%= turbo_stream.replace(@message, partial: 'messages/form', locals: { message: @message}) %>
+<% end %>

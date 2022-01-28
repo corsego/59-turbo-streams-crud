@@ -1,12 +1,24 @@
-<div id="<%= dom_id message %>" class="scaffold_record">
-  <p>
-    <strong>Body:</strong>
-    <%= message.body %>
-  </p>
+<%= turbo_frame_tag dom_id(message) do %>
 
-  <p>
-    <%= link_to "Show this message", message %>
-    <%= button_to "Edit this message", edit_message_path(message), method: :post %>
-    <%= button_to "Destroy this message", message_path(message), method: :delete %>
-  </p>
-</div>
+  <blockquote>
+    <div>
+      <strong><%= message.body %></strong>
+    </div>
+  </blockquote>
+
+  <div style='display: flex; justify-content: flex-end; align-items: center; gap: 10px;}'>
+    <% if action_name != "show" %>
+      <%= link_to "Show", message, class: "btn-show-page",
+                        data: { turbo_frame: :messages },
+                        style: 'text-decoration: none;' %>
+    <% else %>
+      <%= link_to 'Back', messages_path, data: { turbo_frame: :messages} %>
+    <% end %>
+    <%= link_to "Edit", edit_message_path(message), class: 'edit-btn' %>
+
+    <%= button_to "Destroy", message_path(message), method: :delete,
+                        form: { data: { turbo_confirm: 'Are you sure?' }},
+                        class: 'btn-close btn-close-white mt-2',
+                        data: { turbo_frame: :messages }%>
+  </div>
+<% end %>

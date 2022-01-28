@@ -1,20 +1,13 @@
-<p id="notice">
-  <%= notice %>
-</p>
+<%= turbo_stream_from :messages %>
 
-<h1>
-  Messages
-  <span id="message_counter">
-    <%= Message.count %>
-  </span>
-</h1>
+<span class='time-section'>
+  <%= Time.zone.now.strftime("%A, %D: %k:%M:%S.%L") %>
+</span>
 
-<div id="new_message">
-  <%= render partial: "messages/form", locals: { message: Message.new } %>
-</div>
-
-<div id="messages">
+<%= turbo_frame_tag :messages, style: 'margin-top: 1rem;' do %>
+  <div id='new_message'>
+    <%= render 'messages/form', message: Message.new %>
+  </div>
+  <%= render 'messages/count_messages' %>
   <%= render @messages %>
-</div>
-
-<%= link_to "New message", new_message_path %>
+<% end %>

@@ -10,7 +10,10 @@
   </head>
 
   <body>
-    <%= Time.zone.now %>
+    <div id='notifications'>
+      <%= render 'shared/flash' %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
